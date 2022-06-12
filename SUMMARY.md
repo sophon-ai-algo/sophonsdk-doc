@@ -46,8 +46,8 @@
 ## 5 打包和发布 <a href="#deploy" id="deploy"></a>
 
 * [5.1 概述](deploy/intro.md)
-* [5.2 PCIE加速卡模式](deploy/deploy.md)
-* [5.3 SOC模式](deploy/5.3-soc-mo-shi.md)
+* [5.2 PCIE加速卡模式](deploy/pcie.md)
+* [5.3 SOC模式](deploy/soc.md)
 
 ***
 
