@@ -1,0 +1,77 @@
+# 指定基础镜像
+FROM sophon_soc:1.0.1
+
+# 维护者信息
+MAINTAINER docker_user docker_user@email.com
+
+# 安装基本软件包
+RUN sed -i s@/deb.debian.org/@/mirrors.163.com/@g /etc/apt/sources.list \
+ && sed -i s@/security.debian.org/@/mirrors.163.com/@g /etc/apt/sources.list \
+ && apt-get update --fix-missing \
+ && apt-get install -y gcc vim libglib2.0-dev \
+ && apt-get -y install locales
+
+# 安装nginx/redis/mysql/sqlite3/supervisor
+RUN apt-get -y install nginx \
+ && apt-get -y install redis-server redis-tools \
+ && apt-get -y install mysql-server mysql-client \
+ && apt-get -y install sqlite3 \
+ && apt-get -y install supervisor
+
+# 安装调试工具软件
+RUN apt-get -y install htop dstat sysstat iptraf-ng traceroute curl
+
+# 更换pip源
+RUN mkdir -p /root/.pip \
+ && touch /root/.pip/pip.conf \
+ && echo "[global]" >> /root/.pip/pip.conf \
+ && echo "index-url = http://mirrors.aliyun.com/pypi/simple/" >> /root/.pip/pip.conf \
+ && echo "[install]" >> /root/.pip/pip.conf \
+ && echo "trusted-host = mirrors.aliyun.com" >> /root/.pip/pip.conf
+ 
+# 更新pip，安装numpy
+RUN python3 -m pip install --upgrade pip \
+ && python3 -m pip install numpy
+
+# 安装python依赖软件包
+RUN python3 -m pip install flask==1.1.2 \
+ && python3 -m pip install flask_restful==0.3.8 \
+ && python3 -m pip install redis==3.2.1 \
+ && python3 -m pip install psutil==5.7.0 \
+ && python3 -m pip install pyzmq==20.0.0 \
+ && python3 -m pip install Django==2.1.0 \
+ && python3 -m pip install djangorestframework==3.10.3 \
+ && python3 -m pip install django-filter==2.2.0 \
+ && python3 -m pip install django-cors-headers==2.5.3 \
+ && python3 -m pip install django_redis==4.10.0 \
+ && python3 -m pip install requests==2.23.0 \
+ && python3 -m pip install configobj==5.0.6 \
+ && python3 -m pip install websocket_server \
+ && python3 -m pip install borax==3.2.0 \
+ && python3 -m pip install tornado==5.1 \
+ && python3 -m pip install PyMySQL==0.9.3 \
+ && python3 -m pip install pillow \
+ && python3 -m pip install xlwt \
+ && python3 -m pip install xmltodict==0.12.0 \
+ && python3 -m pip install apscheduler==2.1.2
+
+# 创建文件夹
+RUN mkdir -p /workspace/conf \
+ && mkdir -p /workspace/log/supervisor \
+ && mkdir -p /workspace/log/redis \
+ && mkdir -p /workspace/log/mysql
+
+# 设置环境变量
+ENV LANG "C.UTF-8"
+ENV PATH "/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/system/bin:/usr/sbin:/bm_bin:${PATH}"
+ENV LD_LIBRARY_PATH "/system/lib:/system/usr/lib/aarch64-linux-gnu/:${LD_LIBRARY_PATH}"
+ENV PYTHONPATH "/system/lib:${PYTHONPATH}"
+
+# 清理无用软件包
+RUN apt-get autoremove -y --purge gcc \
+ && apt-get clean \
+ && rm -rf /var/cache/apt/archives/*
+
+RUN apt-get clean \
+ && ldconfig \
+ && rm -rf /var/lib/apt/lists/*
