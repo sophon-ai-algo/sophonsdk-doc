@@ -1,16 +1,14 @@
 # 5.2 PCIE加速卡模式
 
-#### 5.2.1 下载基础镜像：[bmnnsdk2-bm1684-ubuntu.docker](https://sophon-file.sophon.cn/sophon-prod-s3/drive/21/12/15/16/bmnnsdk2-bm1684-ubuntu.zip)
+#### 5.2.1 下载基础镜像：x86\_sophonsdk3\_ubuntu18.04\_py37\_runtime\_22.06.docker
 
 #### 5.2.2 构建自定义镜像
 
 Dockerfile示例（仅供参考）：Dockerfile.x86
 
-{% file src="../.gitbook/assets/Dockerfile.x86" %}
-
 ```docker
 # 指定基础镜像
-FROM bmnnsdk2-bm1684/dev:ubuntu16.04
+FROM sophgo/sophonsdk3:ubuntu18.04-py37-runtime-22.06
 
 # 维护者信息
 MAINTAINER docker_user docker_user@email.com
@@ -55,26 +53,8 @@ RUN python3 -m pip install --upgrade pip \
  && python3 -m pip install numpy
 
 # 安装python依赖软件包
-RUN python3 -m pip install flask==1.1.2 \
- && python3 -m pip install flask_restful==0.3.8 \
- && python3 -m pip install redis==3.2.1 \
- && python3 -m pip install psutil==5.7.0 \
- && python3 -m pip install pyzmq==20.0.0 \
- && python3 -m pip install Django==2.1.0 
- && python3 -m pip install djangorestframework==3.10.3 \
- && python3 -m pip install django-filter==2.2.0 \
- && python3 -m pip install django-cors-headers==2.5.3 \
- && python3 -m pip install django_redis==4.10.0 \
- && python3 -m pip install requests==2.23.0 \
- && python3 -m pip install configobj==5.0.6 \
- && python3 -m pip install websocket_server \
- && python3 -m pip install borax==3.2.0 \
- && python3 -m pip install tornado==5.1 \
- && python3 -m pip install PyMySQL==0.9.3 \
- && python3 -m pip install pillow \
- && python3 -m pip install xlwt \
- && python3 -m pip install xmltodict==0.12.0 \
- && python3 -m pip install apscheduler==2.1.2
+RUN python3 -m pip install pillow \
+ && python3 -m pip install xlwt
 
 # 创建文件夹
 RUN mkdir -p /workspace/conf \
@@ -101,8 +81,6 @@ RUN apt-get clean \
 
 使用Dockerfile构建镜像的脚本（仅供参考）：build\_demo\_image\_on\_x86.sh
 
-{% file src="../.gitbook/assets/build_demo_image_on_x86.sh" %}
-
 ```bash
 #!/bin/bash
 
@@ -110,7 +88,7 @@ currTime=$(date +"%Y%m%d")
 TARGET_ARCH="x86"
 REP_NAME="demo"
 VERSION="v1.0.0"
-BASE_IMAGE="bmnnsdk2-bm1684-dev-ubuntu1604"
+BASE_IMAGE="sophonsdk3-runtime-ubuntu1804"
 
 REPOSITORY="${TARGET_ARCH}/${REP_NAME}"
 TAG="${VERSION}-${BASE_IMAGE}"
@@ -161,16 +139,14 @@ docker load -i xxxxxxxxx.tar.gz
 
 运行脚本文件（仅供参考）：run\_demo\_docker\_on\_x86.sh
 
-{% file src="../.gitbook/assets/run_demo_docker_on_x86.sh" %}
-
 ```bash
 #!/bin/bash
 
-###  x86/demo   v1.0.0-bmnnsdk2-bm1684-dev-ubuntu1604
+###  x86/demo   v1.0.0-sophonsdk3-runtime-ubuntu1804
 
 REPO="x86"
 IMAGE="demo"
-TAG="v1.0.0-bmnnsdk2-bm1684-dev-ubuntu1604"
+TAG="v1.0.0-sophonsdk3-runtime-ubuntu1804"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo $DIR
@@ -196,7 +172,7 @@ if [ -c "/dev/bm-sophon0" ]; then
       /workspace/start.sh
   "
 else
-  echo "No Sophon Series Deep Learning Accelerator, docker will run in dev mode"
+  echo "No Sophon Series Deep Learning Accelerator, docker will run in CMode"
   CMD="docker run \
       --privileged=true \
       --network=bridge \

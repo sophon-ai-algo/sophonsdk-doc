@@ -47,8 +47,6 @@ if ((ret = avcodec_open2(*dec_ctx, dec, &opts)) < 0) {
 }
 ```
 
-请参考${BMNNSDK}/examples/SSD\_objext/cpp\_ffmpeg\_bmcv\_bmrt/main.cpp中相关内容。
-
 * Python编程接口
 
 ```python

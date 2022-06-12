@@ -2,7 +2,7 @@
 
 BMCV提供了一套基于算丰AI芯片优化的机器视觉库，目前可以完成色彩空间转换、尺度变换、仿射变换、投射变换、线性变换、画框、JPEG编码、BASE64编码、NMS、排序、特征匹配等操作。关于BMCV模块详细内容请阅读[《BMCV用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/bmcv/html/index.html)。
 
-​ Python接口的实现请参考[《SAIL用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)。
+​Python接口的实现请参考[《SAIL用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)。
 
 ​BMCV API均是围绕bm\_image来进行的。一个bm\_image结构对应于一张图片。
 

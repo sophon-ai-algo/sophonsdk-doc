@@ -1,9 +1,9 @@
 # 4.2 C/C++编程详解
 
-这个章节将会选取BMNNSDK2中的SSD检测算法作为示例，说明各个步骤的接口调用和注意事项。
+这个章节将会选取SSD检测算法作为示例，说明各个步骤的接口调用和注意事项。
 
 {% hint style="info" %}
-**样例代码路径：**$SDK/examples/SSD\_object/cpp\_cv\_bmcv\_bmrt
+**样例代码路径：**examples/simple/ssd/cpp/cpp\_cv\_bmcv\_bmrt
 {% endhint %}
 
 因为SDK支持多种接口风格，因此一个简洁的示例代码不可能面面俱到。故而这个示例程序采用了OPENCV解码 + BMCV图片预处理的组合进行开发，这个组合兼顾了高效和简洁。
@@ -226,7 +226,7 @@ bool res = bm_inference (p_bmrt_, linear_trans_bmcv_, (void*)output_, input_shap
 
 ## 4.2.4 后处理
 
-后处理的过程因模型而异，而且大部分是cpu执行的代码，就不再这里赘述。需要注意的是我们在BMCV中也提供了一些可以用于加速的接口，如bmcv\__sort、bmcv\__nms等，对于其他需要使用硬件加速的情况，可根据需要使用BMKernel(OKKernel)开发。
+后处理的过程因模型而异，而且大部分是cpu执行的代码，就不再这里赘述。需要注意的是我们在BMCV中也提供了一些可以用于加速的接口，如bmcv\__sort、bmcv\__nms等，对于其他需要使用硬件加速的情况，可根据需要使用OKKernel(TPUKernel)开发。
 
 以上就是SSD样例的简单描述，关于涉及到的接口的更详细描述，请查看相应模块文档。
 

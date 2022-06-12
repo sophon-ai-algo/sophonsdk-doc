@@ -242,8 +242,6 @@ bm_shape_t shape_array[2] = {
 static inline bool bm_image_from_mat (std::vector<cv::Mat> &in, std::vector<bm_image> &out)
 ```
 
-示例代码请参考bmmnsdk2开发包中examples/SSD\_object/cpp\_cv\_bmcv\_bmrt
-
 * **bm\_image\_from\_frame**
 
 ```cpp
@@ -282,8 +280,6 @@ static inline bool bm_image_from_frame (bm_handle_t                &bm_handle,
                                       std::vector<AVFrame>       &in,
                                       std::vector<bm_image>      &out)
 ```
-
-示例代码请参考bmmnsdk2开发包中examples/SSD\_object/cpp\_ffmpeg\_bmcv\_bmrt/main.cpp
 
 * **bm\_inference**
 
@@ -333,11 +329,9 @@ static inline bool bm_inference (void                           *p_bmrt,
                                  const char                   *net_name)
 ```
 
-示例代码请参考bmmnsdk2开发包中examples/SSD\_object/cpp\_cv\_bmcv\_bmrt/main.cpp
-
 ## 4.6.3 Python接口
 
-本章节只介绍了用例${BMNNSDK}/examples/SSD\_object/py\_ffmpeg\_bmcv\_sail下的例子中所用的接口函数。
+本章节只介绍了用例examples/simple/ssd/python/py\_ffmpeg\_bmcv\_sail下的例子中所用的接口函数。
 
 更多接口定义请查阅[《SAIL用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)。
 

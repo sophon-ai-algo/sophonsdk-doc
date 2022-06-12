@@ -1,24 +1,24 @@
 # 4.3 Python编程详解
 
-BMNNSDK通过SAIL库向用户提供Python编程接口。
+SophonSDK通过SAIL库向用户提供Python编程接口。
 
 SAIL (Sophon Artificial Intelligent Library) 是 Sophon Inference 中的核心模块。SAIL 对 BMNNSDK 中的 BMLib、BMDecoder、BMCV、BMRuntime 进行了封装，将 BMNNSDK 中原有的“加载 bmodel 并驱动 TPU 推理”、“驱动 TPU 做图像处理”、“驱动 VPU 做图像和视频解码”等功能抽象成更为简单 的 C++ 接口对外提供；并且使用 pybind11 再次封装，提供简洁易用的 python 接口。&#x20;
 
-这个章节将会选取BMNNSDK2中的SSD检测算法作为示例， 来介绍python接口编程。
+这个章节将会选取SSD检测算法作为示例， 来介绍python接口编程。
 
 {% hint style="info" %}
-**样例代码路径：**${BMNNSDK}/examples/SSD\_object/py\_ffmpeg\_bmcv\_sail
+**样例代码路径：**examples/simple/ssd/python/py\_ffmpeg\_bmcv\_sail
 {% endhint %}
 
 目前，SAIL 模块中所有的类、枚举、函数都在“sail”命名空间下，核心的类包括：
 
-* Handle：BMNNSDK中BMLib的bm\_handle\_t的包装类，设备句柄，上下文信息，用来和内核驱动交互 信息。
-* Tensor：BMNNSDK中BMLib的包装类，封装了对device memory的管理以及与system memory的同步。
-* Engine：BMNNSDK中BMRuntime的包装类，可以加载bmodel并驱动TPU进行推理。一个Engine实例可以加载一个任意的bmodel，自动地管理输入张量与输出张量对应的内存。
+* Handle：SDK中BMLib的bm\_handle\_t的包装类，设备句柄，上下文信息，用来和内核驱动交互 信息。
+* Tensor：SDK中BMLib的包装类，封装了对device memory的管理以及与system memory的同步。
+* Engine：SDK中BMRuntime的包装类，可以加载bmodel并驱动TPU进行推理。一个Engine实例可以加载一个任意的bmodel，自动地管理输入张量与输出张量对应的内存。
 * Decoder：使用VPU解码视频，JPU解码图像，均为硬件解码。
-* &#x20;Bmcv：BMNNSDK中BMCV的包装类，封装了一系列的图像处理函数，可以驱动 TPU 进行图像处理。
+* &#x20;Bmcv：SDK中BMCV的包装类，封装了一系列的图像处理函数，可以驱动 TPU 进行图像处理。
 
-其他关于接口的更相信的信息，请阅读${BMNNSDK}/documents/Sophon\_Inference\_zh.pdf。
+其他关于接口的更相信的信息，请阅读[《SAIL用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)。
 
 本章主要介绍以下三点内容：
 

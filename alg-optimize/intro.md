@@ -12,7 +12,7 @@
 
 **硬件加速支持情况**
 
-实践证明，单纯针对神经网络运算进行加速，已经无法满足真实场景的需求。为了提高算法运行效率，BM1684中除张量运算硬件加速单元TPU外，还集成了针对编解码、图像处理等操作的若干硬件加速模块，用户通过BMNNSDK中提供的相应的软件接口库，可以对如上几个步骤进行针对性地加速，从而便捷地开发出高效的算法和应用。
+实践证明，单纯针对神经网络运算进行加速，已经无法满足真实场景的需求。为了提高算法运行效率，BM168X中除张量运算硬件加速单元TPU外，还集成了针对编解码、图像处理等操作的若干硬件加速模块，用户通过SophonSDK中提供的相应的软件接口库，可以对如上几个步骤进行针对性地加速，从而便捷地开发出高效的算法和应用。
 
 为了满足客户对不同风格接口使用的偏好，我们还对硬件加速接口库进行了多次封装，用户可以自行选取合适的接口库进行开发，具体情况总结如下：
 
@@ -24,7 +24,7 @@
 | 输出后处理    | 部分支持         | sail::Bmcv    | N             | N             | BMCV          |
 | 视频/图片编码  | 支持           | sail::Bmcv    | Y             | Y             | BMCV(图片)      |
 
-值得一提的是，为了提高算法效率以及硬件特性的要求，用户在调用硬件加速接口的时候需要注意以下几个 方面，后续的文档会通过实例来进行具体阐述：
+值得一提的是，为了提高算法效率以及硬件特性的要求，用户在调用硬件加速接口的时候需要注意以下几个方面，后续的文档会通过实例来进行具体阐述：
 
 ​ 1. 内存零copy
 
@@ -38,4 +38,4 @@
 
 目前提供了C/C++/Python三种编程接口的支持：BMRuntime、 BMCV、 BMLib三个模块提供给了C接口编程；Python/C++接口是基于SAIL库实现的。
 
-SAIL（Sophon Artificial Intelligent Library），是对 BMNNSDK2 中的 BMRuntime、 BMCV、 BMLib库的高级封装，将 BMNNSDK2中原有的“加载 BModel 并驱动 TPU 推理”、“驱动 TPU 做图像处理”、“驱动 VPU 做图像和视频解码”等功能抽象成更为简单的 C++ 接口对外提供；并且使用 pybind11 再次封装，提供了简洁易用的Python接口。目前， SAIL 模块中所有的类、枚举、函数都在“sail”名字空间下， 关于SAILC++/Python 接口详细内容请阅读 [《SAIL用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)。
+SAIL（Sophon Artificial Intelligent Library），是对 SophonSDK中的 BMRuntime、 BMCV、 BMLib等底层库的高级封装，将 SDK中原有的“加载 BModel 并驱动 TPU 推理”、“驱动 TPU 做图像处理”、“驱动 VPU 做图像和视频解码”等功能抽象成更为简单的 C++ 接口对外提供；并且使用 pybind11 再次封装，提供了简洁易用的Python接口。目前， SAIL 模块中所有的类、枚举、函数都在“sail”名字空间下， 关于SAILC++/Python 接口详细内容请阅读 [《SAIL用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)。
