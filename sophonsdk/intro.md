@@ -2,7 +2,7 @@
 
 SophonSDK 是一个一站式SDK，其中包含了模型转换、算法移植、int8量化等相关模块，我们提供了包括文档、视频、论坛、开源仓库等一系列资料帮助用户进行算法移植和开发工作，具体如下：
 
-**开发指南：**[**https://sophgo-doc.gitbook.io/sophonsdk3/**](https://sophgo-doc.gitbook.io/bmnnsdk2-bm1684/)，其中包括：基本概念及SDK简介；资料简介、文档说明；SDK的获取、安装、配置及更新；快速入门例子、模型转换及模型量化、示例代码的讲解、docker部署等内容。
+**开发指南：**[**https://sophgo-doc.gitbook.io/sophonsdk3/**](https://sophgo-doc.gitbook.io/sophonsdk3)，其中包括：基本概念及SDK简介；资料简介、文档说明；SDK的获取、安装、配置及更新；快速入门例子、模型转换及模型量化、示例代码的讲解、docker部署等内容。
 
 **网络和算子支持情况：**关于网络和算子的支持情况，请查看《NNToolChain用户开发手册》中的附录 [**DL Ops\&Models支持情况**](https://doc.sophgo.com/docs/docs\_latest\_release/nntc/html/appendix/nn\_support.html)。也可以通过工具链中转换命令查看。
 
