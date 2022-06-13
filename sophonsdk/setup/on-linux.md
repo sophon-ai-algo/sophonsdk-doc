@@ -134,7 +134,7 @@ cd sophonsdk_v<x.x.x>
 {% hint style="info" %}
 若想在PCIe模式下Python中使用我们提供的BM-OpenCV，请设置以下环境变量，请根据实际路径修改：
 
-export PYTHONPATH=$PYTHONPATH:/workspace/lib/opencv/x86/opencv-python
+export PYTHONPATH=$PYTHONPATH:/workspace/lib/opencv/pcie/opencv-python
 {% endhint %}
 
 #### **CModel模式**
