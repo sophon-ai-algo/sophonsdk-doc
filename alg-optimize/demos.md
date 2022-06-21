@@ -27,7 +27,7 @@
 
 ## **4.7.1 PCIE模式用例演示**
 
-1.  **在x86 Linux开发主机上解压sdk开发包并运行docker开发环境，本示例都基于此docker环境，Docker环境的按照请参考《**[**1.5.1环境配置**](../bmnnsdk2/setup/on-linux.md)**》**
+1.  **在x86 Linux开发主机上解压sdk开发包并运行docker开发环境，本示例都基于此docker环境，Docker环境的按照请参考** [**1.5.1环境配置**](../bmnnsdk2/setup/on-linux.md)
 
     ```
     # 在宿主机上解压缩SDK软件包
@@ -96,7 +96,7 @@
 
 ## 4.7.2 SOC模式用例演示
 
-1.  **在x86 Linux开发主机上解压sdk开发包并运行docker开发环境，本实例都基于此docker环境，Docker环境的按照请参考《**[**1.5.1环境配置**](../bmnnsdk2/setup/on-linux.md)**》**
+1.  **在x86 Linux开发主机上解压sdk开发包并运行docker开发环境，本实例都基于此docker环境，Docker环境的按照请参考** [**1.5.1环境配置**](../bmnnsdk2/setup/on-linux.md)
 
     ```
     # 以下命令在宿主机上执行

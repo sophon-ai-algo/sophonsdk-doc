@@ -1,8 +1,8 @@
 # 4.4 解码模块
 
-关于解码详细内容请参考[《多媒体用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/multimedia\_guide/html/index.html)。
+关于解码详细内容请参考[《多媒体用户开发手册》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/multimedia\_guide/html/index.html)。
 
-关于ffmpeg解码python接口请参考[《SAIL用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)。
+关于ffmpeg解码python接口请参考[《SAIL用户开发手册》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/sophon-inference/html/index.html)。
 
 本章主要介绍以下两点内容：
 

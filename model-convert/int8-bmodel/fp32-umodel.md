@@ -101,7 +101,7 @@ python3 resnet50_to_umodel.py
 | --desc | 输入tensor dtype类型                                           |
 | --cmp  | 可选参数，指定是否测试模型转化的中间文件                                       |
 
-更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/docs\_latest\_release/calibration-tools/html/module/chapter4.html#caffefp32umodel)。
+更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/index.html)。
 
 ### **3.3.2.2 TensorFlow模型转换fp32 umodel**
 
@@ -152,7 +152,7 @@ python3 resnet50_v2_to_umodel.py
 | --desc | 可选，输入tensor dtype类型                                        |
 | --cmp  | 可选，指定是否测试模型转化的中间文件                                         |
 
-更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/docs\_latest\_release/calibration-tools/html/module/chapter4.html#tensorflowfp32umodel)。
+更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/index.html)。
 
 ### **3.3.2.3 PyTorch模型转换fp32 umodel**&#x20;
 
@@ -196,7 +196,7 @@ python3 mobilenet_v2_to_umodel.py
 | --desc | 可选，输入tensor dtype类型                                        |
 | --cmp  | 可选，指定是否测试模型转化的中间文件                                         |
 
-更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/docs\_latest\_release/calibration-tools/html/module/chapter4.html#pytorchfp32umodel)。
+更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/index.html)。
 
 ### **3.3.2.4 MXNet模型转换fp32 umodel**&#x20;
 
@@ -242,7 +242,7 @@ python3 mobilenet0.25_to_umodel.py
 | --desc | 可选，输入tensor dtype类型                                        |
 | --cmp  | 可选，指定是否测试模型转化的中间文件                                         |
 
-更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/docs\_latest\_release/calibration-tools/html/module/chapter4.html#mxnetfp32umodel)。
+更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/index.html)。
 
 ### **3.3.2.5 Darknet模型转换fp32 umodel**
 
@@ -286,7 +286,7 @@ python3 yolov3_to_umodel.py
 
 若不指定-d 参数，则默认在当前文件夹下，新生成 compilation 文件夹存放输出的 \*.fp32umodel 与 \*\_bmnetd\_test\_fp32.prototxt。
 
-更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/docs\_latest\_release/calibration-tools/html/module/chapter4.html#darknetfp32umodel)。
+更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/index.html)。
 
 ### **3.3.2.6 ONNX模型转换fp32 umodel**
 
@@ -332,7 +332,7 @@ python3 postnet_to_umodel.py
 
 若不指定-d 参数，则默认在当前文件夹下，新生成 compilation 文件夹存放输出的 \*.fp32umodel 与 \*\_bmneto\_test\_fp32.prototxt。
 
-更多详细内容，请参考《[Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/docs\_latest\_release/calibration-tools/html/module/chapter4.html#onnxfp32umodel)。
+更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/index.html)。
 
 ### **3.3.2.7 PaddlePaddle模型转换fp32 umodel**
 
@@ -382,4 +382,4 @@ python3 ppocr_rec_to_umodel.py
 
 若不指定-d 参数，则默认在当前文件夹下，新生成 compilation 文件夹存放输出的 \*.fp32umodel 与 \*\_bmneto\_test\_fp32.prototxt。
 
-更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/docs\_latest\_release/calibration-tools/html/module/chapter4.html#paddlepaddlefp32umodel)。
+更多详细内容，请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/index.html)。

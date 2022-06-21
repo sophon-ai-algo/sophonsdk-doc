@@ -172,4 +172,4 @@ source envsetup_cmodel.sh
 
 如果编译通过说明交叉编译工具链正确，开发环境是可以正常使用的。
 
-若您需要使用SAIL模块，在非SoC平台下，您需要根据使用的python版本安装相应的pip包，请参考[《SAIL用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)中的安装说明。若您在SoC平台（SE5/SM5）中使用SAIL模块，只需要设置环境变量即可，请参考[#1.5.3.3-yun-hang-huan-jing-pei-zhi](on-soc.md#1.5.3.3-yun-hang-huan-jing-pei-zhi "mention")。
+若您需要使用SAIL模块，在非SoC平台下，您需要根据使用的python版本安装相应的pip包，请参考[《SAIL用户开发手册》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/sophon-inference/html/index.html)中的安装说明。若您在SoC平台（SE5/SM5）中使用SAIL模块，只需要设置环境变量即可，请参考[#1.5.3.3-yun-hang-huan-jing-pei-zhi](on-soc.md#1.5.3.3-yun-hang-huan-jing-pei-zhi "mention")。

@@ -18,4 +18,4 @@ Calibration-tools 对外提供了UFramework 的应用接口，可以对 umodel �
 3\. 检测网络，通过ufw测试特定图片，与fp32网络比对：参考examples/calibration/[face\_demo](../demo/face\_demo.md).
 {% endhint %}
 
-更多关于精度测试以及量化误差分析、量化技巧的内容请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/docs\_latest\_release/calibration-tools/html/module/chapter4.html#optional)。
+更多关于精度测试以及量化误差分析、量化技巧的内容请参考[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/index.html)。

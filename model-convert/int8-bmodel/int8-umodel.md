@@ -69,7 +69,7 @@ Calibration-tools 量化工具支持两种数据预处理表示方式：
 **注意：**
 
 * 在修改 prototxt 文件添加数据预处理时，使用transform\__param和transform_\_op定义预处理只能二选一，请优先使用_transform_\_op。&#x20;
-* 关于transform\__param和transform_\_op的更详细内容请查看《Quantization-Tools-User\_Guide》中的[TransformOp定义](https://doc.sophgo.com/docs/docs\_latest\_release/calibration-tools/html/module/chapter4.html#transformop)。
+* 关于transform\__param和transform_\_op的更详细内容请查看[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/index.html)中的[TransformOp定义](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/module/chapter4.html#transformop)。
 * 当前版本开始对lmdb有升级，制作lmdb只有python形式的接口提供，示例程序create\_lmdb提供了例程可在其基础上修改。推荐在python代码中将预处理一并包含，生成已经预处理过的数据供量化使用，这样就不必在prototxt中定义前处理。 制作lmdb时候需要生成与网络输入shape一致的数据，当此lmdb用作转换fp32umodel命令的-D参数的输入时，上述prototxt的data layer的batch\_size参数会自动设置为0，如果转换fp32umodel过程中没有指定-D参数，则<mark style="color:green;">手工修改prototxt指定数据源时需要注意将batch\_size设置为0</mark>。 <mark style="color:red;">以前版本二进制convert\_imageset工具生成的lmdb配合以前的prototxt是兼容的。</mark>
 {% endhint %}
 
@@ -154,7 +154,7 @@ calibration_use_pb \
 
 ### **3.3.3.3 优化网络**
 
-默认配置下对输入浮点网络进行优化，包括：batchnorm 与 scale 合并，前处理融合到网络，删除推理过程中不必要的算子等功能。更多信息请查看${BMNNSDK}/documents下的《Quantization-Tools-User\_Guide.pdf》。
+默认配置下对输入浮点网络进行优化，包括：batchnorm 与 scale 合并，前处理融合到网络，删除推理过程中不必要的算子等功能。更多信息请查看[《Quantization-Tools-User\_Guide》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/index.html)。
 
 ```
 calibration_use_pb \

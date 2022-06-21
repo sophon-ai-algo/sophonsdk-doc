@@ -1,6 +1,6 @@
 # 5.2 PCIE加速卡模式
 
-#### 5.2.1 下载基础镜像：[bmnnsdk2-bm1684-ubuntu.docker](https://sophon-file.sophon.cn/sophon-prod-s3/drive/21/12/15/16/bmnnsdk2-bm1684-ubuntu.zip)
+#### 5.2.1 下载基础镜像：[bmnnsdk2-bm1684-ubuntu.docker](https://developer.sophgo.com/site/index/material/11/all.html)
 
 #### 5.2.2 构建自定义镜像
 

@@ -26,7 +26,7 @@
 | **Host Memory**   | 芯片上主控Cortex A53的内存                                        | 主机内存                                                       |
 | **Device Memory** | 划分给TPU/VPP/VPU的设备内存                                       | PCIE板卡上的物理内存（Global Memory）                                |
 
-内存同步问题是后续应用调试中经常会遇到的比较隐蔽的重要问题。我们在BM-OpenCV和BM-FFmpeg两个框架内都提供了内存同步操作的函数；而BMCV API只面向设备内存操作，因此不存在内存同步的问题，在调用BMCV API前，需要将输入数据在设备内存上准备好；我们在BMLib中提供了接口，可以实现Host Memory和Global Memory之间、Global Memory内部以及不同设备的Global Memory之间的数据搬运。更多详细信息请参考[《BMLib用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/bmlib/html/index.html)和[《多媒体用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/multimedia\_guide/html/index.html)。
+内存同步问题是后续应用调试中经常会遇到的比较隐蔽的重要问题。我们在BM-OpenCV和BM-FFmpeg两个框架内都提供了内存同步操作的函数；而BMCV API只面向设备内存操作，因此不存在内存同步的问题，在调用BMCV API前，需要将输入数据在设备内存上准备好；我们在BMLib中提供了接口，可以实现Host Memory和Global Memory之间、Global Memory内部以及不同设备的Global Memory之间的数据搬运。更多详细信息请参考[《BMLib用户开发手册》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/bmlib/html/index.html)和[《多媒体用户开发手册》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/multimedia\_guide/html/index.html)。
 
 ### 1.3.3 BModel
 
@@ -81,6 +81,6 @@ struct bm_image {
 };
 ```
 
-BMCV API均是围绕bm\_image来进行的，一个 bm\_image 对象对应于一张图片。用户通过 bm\_image\_create构建 bm\_image 对象，attach到device memory；使用完需要调用 bm\_image\_destroy 销毁；手动attach到device memory的还需要手动释放；不同BMCV API支持的image\_format和data\_type不同，注意格式要求，必要时需要进行格式转换；更多详细信息请参考[《BMCV用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/bmcv/html/index.html)_。_
+BMCV API均是围绕bm\_image来进行的，一个 bm\_image 对象对应于一张图片。用户通过 bm\_image\_create构建 bm\_image 对象，attach到device memory；使用完需要调用 bm\_image\_destroy 销毁；手动attach到device memory的还需要手动释放；不同BMCV API支持的image\_format和data\_type不同，注意格式要求，必要时需要进行格式转换；更多详细信息请参考[《BMCV用户开发手册》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/bmcv/html/index.html)_。_
 
-_SAIL库中将bm\_image封装为了BMImage，_相关信息请参考[《_SAIL用户开发手册_》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)。
+_SAIL库中将bm\_image封装为了BMImage，_相关信息请参考[《_SAIL用户开发手册_》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/sophon-inference/html/index.html)。

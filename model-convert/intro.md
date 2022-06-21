@@ -2,7 +2,7 @@
 
 ​能够运行于算丰系列 TPU平台的模型是定制模型BModel，用户需要首先进行模型迁移，把训练好的其他框架下的模型转换为BModel才能在算丰系列TPU上运行。
 
-当前BMNNSDK已支持绝大部分开源的 Caffe、Darknet、MXNet、ONNX、PyTorch、TensorFlow、Paddle Paddle等框架下的算子和模型，更多的网络层和模型也在持续支持中。关于对算子和模型的支持情况，请查看[《NNToolChain用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/nntc/html/index.html)。
+当前BMNNSDK已支持绝大部分开源的 Caffe、Darknet、MXNet、ONNX、PyTorch、TensorFlow、Paddle Paddle等框架下的算子和模型，更多的网络层和模型也在持续支持中。关于对算子和模型的支持情况，请查看[《NNToolChain用户开发手册》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/nntc/html/index.html)。
 
 | # | 深度学习框架        | 版本要求                                                                                         | 使用的bmnetx模型编译器 |
 | - | ------------- | -------------------------------------------------------------------------------------------- | -------------- |
@@ -32,7 +32,7 @@ NNToolChain工具套件提供了bmnetc、bmnetd、bmnetm、bmneto、bmnetp、bmn
 
 1. **基于BMLang开发：**BMLang 是一种面向 Sophon TPU 的上层编程语言，适用于编写高性能的深度学习、图像处理、矩 阵运算等算法程序。我们提供了基于 C++ 和基于 Python 两种 BMLang 编程接口。详情请参考SDK中document目录下的用户手册《BMLang.pdf》。
 2. **基于 BMCPU 开发：**BMCPU 支持用户对 TPU 不能实现的 layer 进行 CPU 编程。详情请参考SDK中document目录下的用户手册《NNToolChain.pdf》中的6.4节“ BMCPU插件使用”。
-3. **基于 OKKernel （BMKernel）开发：**OKKernel（BMKernel） 是面向用户推出的针对 Sophon TPU 的底层编程模型，通过根据芯片底层指令集封装的一套原子操作接口，向用户最大程度提供芯片的可编程能力。详情下载网页版[《OKKernel用户开发文档》](https://sophon-file.sophon.cn/sophon-prod-s3/drive/21/11/09/10/okkernel.zip)。
+3. **基于 OKKernel （BMKernel）开发：**OKKernel（BMKernel） 是面向用户推出的针对 Sophon TPU 的底层编程模型，通过根据芯片底层指令集封装的一套原子操作接口，向用户最大程度提供芯片的可编程能力。详情下载网页版[《OKKernel用户开发文档》](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/okkernel/html/index.html)。
 
 若您在使用过程中遇到问题，可联系算能科技获取技术支持。
 {% endhint %}
