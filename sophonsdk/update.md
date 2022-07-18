@@ -1,12 +1,8 @@
----
-description: Sophon
----
-
 # 1.5 更新SDK
 
 我们将通过官方网站发布新版本的SDK：[官方下载中心](https://sophon.cn/drive/index.html)
 
-通常而言，您只需要下载新版本的SophonSDK(sophonsdk\_v\<x.y.z>.tar.gz)；基础开发镜像一般不会更新，若需要更新时，我们会在BMNNSDK的下载页面给出特别提醒。
+通常而言，您只需要更新SophonSDK(sophonsdk\_v\<x.y.z>.tar.gz)，基础开发镜像一般比较稳定；SDK3.0.0需要使用新的基于Ubuntu 18.04的docker开发镜像。
 
 ### **1.5.1 PCIe模式下的更新**
 
@@ -16,7 +12,7 @@ description: Sophon
 
 ### **1.5.2 SoC模式下的更新**
 
-SoC模型下有多种更新固件的方式，具体可参考FAQ文档《[智算盒子/模组刷机问题](https://doc.sophgo.com/docs/docs\_latest\_release/faq/html/devices/SOC/soc\_firmware\_update.html)》：
+SoC模型下有多种更新固件的方式，具体可参考FAQ文档《[智算盒子/模组刷机问题](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/faq/html/devices/SOC/soc\_firmware\_update.html)》：
 
 * （1）<mark style="color:green;">**文件替换**</mark>直接更新[kernel、预编译的SDK库以及bootloader等文件](https://developer.sophgo.com/site/index/material/12/55.html)：文件替换方式是指在SoC系统中直接通过替换对应文件的方式分别升级bootloader、kernel和SDK等其它软件。这种方式有一定的风险，如不同软件组件之间的版本匹配、文件损坏等。
 * （2）使用<mark style="color:green;">**SD卡刷**</mark>烧写整个固件：这种方式最为干净可靠，理论上只要您的SE微服务器或SM模组硬件没有损坏，都可以进行SD卡刷机。（注意：<mark style="color:red;">**卡刷会重写整个eMMC，也即您存储在eMMC的数据全部会丢失，请务必做好数据备份。**</mark>）

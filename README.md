@@ -1,8 +1,12 @@
 ---
-description: 更新日期：2022年06月12日 适配版本：3.0.0_20220612_master
+description: 更新日期：2022年07月18日 适配版本：3.0.0_20220716
 ---
 
 # SophonSDK3 开发指南
+
+## 注意
+
+近期我们将对SDK的发布方式进行重大优化升级，改进安装使用和开发部署的用户体验。敬请期待！
 
 ## **声明**&#x20;
 
@@ -43,7 +47,7 @@ description: 更新日期：2022年06月12日 适配版本：3.0.0_20220612_mast
 | v2.5.0 | 2021/09/02 | Revised for 2.5.0                                   |
 | v2.6.0 | 2021/12/09 | Revised for 2.6.0                                   |
 | v2.7.0 | 2022/05/31 | first released on 2022/03/16, patched on 2022/05/31 |
-| v3.0.0 | 2022/06/12 | first released on 2022/06/12                        |
+| v3.0.0 | 2022/07/16 | first released on 2022/07/16                        |
 
 ## 术语解释
 
@@ -77,14 +81,14 @@ description: 更新日期：2022年06月12日 适配版本：3.0.0_20220612_mast
 | Umodel                       | 算能自定义的UFamework下的模型格式，为量化模型时使用的中间模型格式                                       |
 | BModel                       | 面向算能TPU处理器的深度神经网络模型文件格式，其中包含目标网络的权重（weight）、TPU指令流等                         |
 | BMLang                       | 面向TPU的高级编程模型，用户开发时无需了解底层TPU硬件信息                                             |
-| BMKernel(OKKernel,TPUKernel) | 基于TPU原子操作(根据芯片指令集封装的一套接口)的开发库，需熟悉芯片架构、存储细节                                  |
+| TPUKernel(OKKernel,BMKernel) | 基于TPU原子操作(根据芯片指令集封装的一套接口)的开发库，需熟悉芯片架构、存储细节                                  |
 | SAIL                         | 支持Python/C++接口的Sophon Inference推理库，是对BMCV、BMDecoder、 BMLib、BMRuntime等的进一步封装 |
 | winograd                     | 一种卷积的加速算法                                                                   |
 
 ## 授权
 
-​ BMNNSDK/SophonSDK是算能科技自主研发的原创深度学习开发工具包，未经算能科技事先书面授权，其它第三方公司或个人不得以任何形式或方式复制、发布和传播。
+​BMNNSDK/SophonSDK是算能科技自主研发的原创深度学习开发工具包，未经算能科技事先书面授权，其它第三方公司或个人不得以任何形式或方式复制、发布和传播。
 
 ## 帮助与支持
 
-​ 在使用过程中，如有关于SophonSDK的任何问题或者意见和建议，请联系相关技术支持。
+​ 在使用过程中，如有关于SophonSDK的任何问题或者意见和建议，欢迎到[官方技术论坛](https://developer.sophgo.com/forum/index.html)提问反馈。

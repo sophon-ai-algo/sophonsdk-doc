@@ -2,16 +2,16 @@
 
 ​基于SophonSDK提供的BMNet工具链可以很方便地将原始第三方深度学习框架下训练的模型转换为BModel。
 
-| 编译器      | 功能                              | 使用指导                                                                                          |
-| -------- | ------------------------------- | --------------------------------------------------------------------------------------------- |
-| bmnetc   | 编译Caffe模型                       | [BMNETC使用](https://doc.sophgo.com/docs/docs\_latest\_release/nntc/html/usage/bmnetc.html)     |
-| bmnett   | 编译TensorFlow模型                  | [BMNETT使用](https://doc.sophgo.com/docs/docs\_latest\_release/nntc/html/usage/bmnett.html)     |
-| bmnetm   | 编译MXNet模型                       | [BMNETM使用](https://doc.sophgo.com/docs/docs\_latest\_release/nntc/html/usage/bmnetm.html)     |
-| bmnetp   | 编译PyTorch模型                     | [ BMNETP使用](https://doc.sophgo.com/docs/docs\_latest\_release/nntc/html/usage/bmnetp.html)    |
-| bmnetd   | 编译Darknet模型                     | [BMNETD使用](https://doc.sophgo.com/docs/docs\_latest\_release/nntc/html/usage/bmnetd.html)     |
-| bmnetu   | 编译算丰自定义UFW(Unified Framework)模型 | [BMNETU使用](https://doc.sophgo.com/docs/docs\_latest\_release/nntc/html/usage/bmnetu.html)     |
-| bmneto   | 编译ONNX模型                        | [BMNETO使用](https://doc.sophgo.com/docs/docs\_latest\_release/nntc/html/usage/bmneto.html)     |
-| bmpaddle | 编译PaddlePaddle模型                | [BMPADDLE使用](https://doc.sophgo.com/docs/docs\_latest\_release/nntc/html/usage/bmpaddle.html) |
+| 编译器      | 功能                              | 使用指导                                                                                                |
+| -------- | ------------------------------- | --------------------------------------------------------------------------------------------------- |
+| bmnetc   | 编译Caffe模型                       | [BMNETC使用](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/nntc/html/usage/bmnetc.html)     |
+| bmnett   | 编译TensorFlow模型                  | [BMNETT使用](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/nntc/html/usage/bmnett.html)     |
+| bmnetm   | 编译MXNet模型                       | [BMNETM使用](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/nntc/html/usage/bmnetm.html)     |
+| bmnetp   | 编译PyTorch模型                     | [ BMNETP使用](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/nntc/html/usage/bmnetp.html)    |
+| bmnetd   | 编译Darknet模型                     | [BMNETD使用](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/nntc/html/usage/bmnetd.html)     |
+| bmnetu   | 编译算丰自定义UFW(Unified Framework)模型 | [BMNETU使用](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/nntc/html/usage/bmnetu.html)     |
+| bmneto   | 编译ONNX模型                        | [BMNETO使用](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/nntc/html/usage/bmneto.html)     |
+| bmpaddle | 编译PaddlePaddle模型                | [BMPADDLE使用](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/nntc/html/usage/bmpaddle.html) |
 
 执行`source envsetup_xxx.sh`会自动安装以上转换工具，并在当前终端设置相关的环境变量。您也可以将环境变量写到配置文件`~/.bashrc`中。
 

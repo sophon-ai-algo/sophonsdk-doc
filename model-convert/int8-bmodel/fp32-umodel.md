@@ -49,4 +49,4 @@ python3 -m ufw.tools.pp_to_umodel --help
 
 详细参数说明针对不同框架稍有区别。用户可以在命令行直接使用`python3 -m ufw.tools.**_to_umodel` 加参数进行转换，或根据[examples](https://github.com/sophon-ai-algo/examples)仓库中calibartion下提供的示例程序，在其基础上修改其中的少量参数完成自己的模型转换。
 
-更多详细内容，请参考[《量化工具用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/calibration-tools/html/module/chapter4.html#fp32umodel)。
+更多详细内容，请参考[《量化工具用户开发手册》](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/calibration-tools/html/module/chapter4.html#fp32umodel)。

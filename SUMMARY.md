@@ -15,12 +15,11 @@
 * [1.6 SDK更新记录](sophonsdk/notes.md)
 * [1.7 SDK已知问题](sophonsdk/issues.md)
 
-## 2 快速入门 <a href="#tutorial" id="tutorial"></a>
+## 2 快速入门 <a href="#get_started" id="get_started"></a>
 
-* [2.1 芯片简介](tutorial/chips.md)
-* [2.2 移植开发综述](tutorial/overview.md)
-* [2.3 重要概念](tutorial/core.md)
-* [2.4 常用样例](tutorial/examples.md)
+* [2.1 移植开发综述](get\_started/overview.md)
+* [2.2 重要概念](get\_started/info.md)
+* [2.3 样例程序](get\_started/examples.md)
 
 ## 3 网络模型迁移 <a href="#model-convert" id="model-convert"></a>
 

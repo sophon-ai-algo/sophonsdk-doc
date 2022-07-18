@@ -75,11 +75,11 @@ Calibration-tools 量化工具支持两种数据预处理表示方式：
 
 ### **3.3.3.2 量化网络**
 
-使用`calibration_use_pb` 可以完成网络的量化，具体请参考《量化工具用户开发手册》[量化网络](https://doc.sophgo.com/docs/docs\_latest\_release/calibration-tools/html/module/chapter4.html#quantize-nets)。
+使用`calibration_use_pb` 可以完成网络的量化，具体请参考《量化工具用户开发手册》[量化网络](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/calibration-tools/html/module/chapter5.html#quantize-nets)。
 
 ### **3.3.3.3 优化网络**
 
-使用`calibration_use_pb` 可以完成网络的优化，默认配置下对输入浮点网络进行优化，包括：batchnorm 与 scale 合并，前处理融合到网络，删除推理过程中不必要的算子等功能。具体请参考《量化工具用户开发手册》[优化网络](https://doc.sophgo.com/docs/docs\_latest\_release/calibration-tools/html/module/chapter4.html#optimize-nets)。
+使用`calibration_use_pb` 可以完成网络的优化，默认配置下对输入浮点网络进行优化，包括：batchnorm 与 scale 合并，前处理融合到网络，删除推理过程中不必要的算子等功能。具体请参考《量化工具用户开发手册》[优化网络](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/calibration-tools/html/module/chapter5.html#optimize-nets)。
 
 ### **3.3.3.4 级联网络量化**
 

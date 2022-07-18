@@ -2,7 +2,7 @@
 
 SophonSDK开发包由两部分组成：
 
-* **基于x86的Ubuntu开发Docker：**我们提供统一的Docker基础开发镜像以规避环境不一致带来的隐性问题，特别是对于初级用户，强烈建议使用我们提供的Docker镜像作为开发环境进行模型转换和算法迁移工作。从3.y.z开始，基础Docker镜像由2.y.z时的Ubuntu16.04升级为Ubuntu18.04。
+* **基于x86的Ubuntu开发Docker：**我们提供统一的Docker基础开发镜像以规避环境不一致带来的隐性问题，特别是对于初级用户，强烈建议使用我们提供的Docker镜像作为开发环境进行模型转换和算法迁移工作。从3.y.z开始，Docker开发镜像由2.y.z时的Ubuntu16.04升级为Ubuntu18.04。
 * **SophonSDK：**sophonsdk\_v\<x.y.z>.tar.gz，其中x.y.z为版本号。SophonSDK将以目录映射的方式挂载到Docker容器内部供用户使用。SDK分windows版本和Linux版本。Windows版本的SDK的使用方式请参见SDK包下的用户文档。本文档后续内容均以Linux下的使用操作为例。
 
 {% hint style="warning" %}
@@ -15,12 +15,8 @@ SophonSDK开发包由两部分组成：
 
 您可以访问[算能官网](https://developer.sophgo.com/site/index/material/all/all.html)来下载相关资料。SophonSDK 3需要Ubuntu 18.04，请确保主机系统满足要求或使用我们的提供的开发镜像来配置环境。
 
-|                  项目                  |                                    下载页面                                    |
-| :----------------------------------: | :------------------------------------------------------------------------: |
-| Ubuntu18.04开发Docker - Python3.7（待发布） | [点击前往官网下载页面](https://developer.sophgo.com/site/index/material/11/all.html) |
-|        BMNNSDK3.0.0  开发包（待发布）        | [点击前往官网下载页面](https://developer.sophgo.com/site/index/material/17/all.html) |
-
-关于其他平台的docker部署镜像，您可以联系我们的技术支持获取。
-
-后续我们也将把开发和部署镜像发布到docker hub以便您下载使用，相关Docker镜像的构建文件Dockerfile也将放到github开源（[docker-images](https://github.com/sophon-ai-algo/docker-images)），敬请期待。
+|                项目               |                                    下载页面                                    |
+| :-----------------------------: | :------------------------------------------------------------------------: |
+| Ubuntu18.04开发Docker - Python3.7 | [点击前往官网下载页面](https://developer.sophgo.com/site/index/material/11/all.html) |
+|       SophonSDK3.0.0  开发包       | [点击前往官网下载页面](https://developer.sophgo.com/site/index/material/17/all.html) |
 

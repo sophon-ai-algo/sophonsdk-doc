@@ -1,8 +1,8 @@
 # 4.6 模型推理
 
-C接口详细介绍请阅读[《NNToolChain用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/nntc/html/index.html)中的[BMRuntime使用章节](https://doc.sophgo.com/docs/docs\_latest\_release/nntc/html/usage/runtime.html)。
+C接口详细介绍请阅读《NNToolChain用户开发手册》中的[BMRuntime使用章节](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/nntc/html/usage/runtime.html)。
 
-​Python接口详细介绍请阅读[《SAIL用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)。
+​Python接口详细介绍请阅读[《SAIL用户开发手册》](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/sophon-inference/html/index.html)。
 
 ​BMRuntime用于读取BMCompiler的编译输出(.bmodel)，驱动其在Sophon TPU芯片中执行。BMRuntime向用户提供了丰富的接口，便于用户移植算法，其软件架构如下:
 
@@ -333,7 +333,7 @@ static inline bool bm_inference (void                           *p_bmrt,
 
 本章节只介绍了用例examples/simple/ssd/python/py\_ffmpeg\_bmcv\_sail下的例子中所用的接口函数。
 
-更多接口定义请查阅[《SAIL用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)。
+更多接口定义请查阅[《SAIL用户开发手册》](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/sophon-inference/html/index.html)。
 
 * **Engine**
 

@@ -7,10 +7,10 @@
 
 请注意后续步骤适用SDK为sophonsdk\_v\<x.y.z>.tar.gz，其中\<x.y.z>为SDK版本号(x>=3)，会随着SDK的升级而不断变化。
 
-其他平台的用户也需要使用x86主机作为开发环境完成模型转换，而后再交叉编译生成相应平台的程序拷贝到目标平台运行。
+其他平台的用户也需要在x86主机上使用我们提供的docker开发环境和SDK完成模型转换。
 {% endhint %}
 
-### **1.5.1.1 解压SDK压缩包**
+### **1.4.1.1 解压SDK压缩包**
 
 ```
 tar zxvf sophonsdk_v<x.y.z>.tar.gz
@@ -19,7 +19,7 @@ cd sophonsdk_v<x.y.z>
 
 #### **（驱动安装请在docker 之外宿主机上进行）**
 
-### **1.5.1.2 驱动安装**
+### **1.4.1.2 驱动安装**
 
 {% hint style="info" %}
 提示：如果用户有Sophon PCIe加速卡，则需要按照如下方式进行驱动安装和卸载。PCIe模式支持x86、ARM、LoongArch龙芯、mips、sw申威等主机平台，这些平台的驱动文件各不相同，我们在SDK中提供了相应的驱动源码和编译安装脚本；若没有PCIe卡，则应当跳过本节，后续开发中使用CModel模式完成模型转换和程序的交叉编译。
@@ -71,7 +71,7 @@ cd sophonsdk_v<x.y.z>
 
 如果是其他主机，请执行相应的卸载脚本`remove_driver_xxx.sh`。
 
-### **1.5.1.3 Docker 安装**
+### **1.4.1.3 Docker 安装**
 
 若已安装docker，请跳过本节。
 
@@ -93,7 +93,7 @@ newgrp docker​
 提示：需要logout系统然后重新登录，再使用docker就不需要sudo了。
 {% endhint %}
 
-### **1.5.1.4 加载docker镜像**
+### **1.4.1.4 加载docker镜像**
 
 {% hint style="info" %}
 注意：后续版本的Docker名字可能会变化，请根据实际Docker名字做输入。
@@ -103,7 +103,7 @@ newgrp docker​
 docker load -i x86_sophonsdk3_ubuntu18.04_py37_dev_22.06.docker
 ```
 
-### **1.5.1.5 创建docker 容器进入docker**
+### **1.4.1.5 创建docker 容器进入docker**
 
 ```
 cd sophonsdk_v<x.x.x>
@@ -117,7 +117,7 @@ cd sophonsdk_v<x.x.x>
 
 **（以下步骤在docker 中进行）**
 
-### **1.5.1.6 工具安装及环境配置**
+### **1.4.1.6 工具安装及环境配置**
 
 #### **PCIe模式**
 
@@ -134,7 +134,7 @@ cd sophonsdk_v<x.x.x>
 {% hint style="info" %}
 若想在PCIe模式下Python中使用我们提供的BM-OpenCV，请设置以下环境变量，请根据实际路径修改：
 
-export PYTHONPATH=$PYTHONPATH:/workspace/lib/opencv/pcie/opencv-python
+export PYTHONPATH=$PYTHONPATH:/workspace/lib/opencv/<mark style="color:green;">**pcie**</mark>/opencv-python
 {% endhint %}
 
 #### **CModel模式**
@@ -147,7 +147,7 @@ cd  /workspace/scripts/
 source envsetup_cmodel.sh
 ```
 
-### **1.5.1.7 验证**
+### **1.4.1.7 验证**
 
 您可以执行以下命令，验证开发环境中的交叉编译工具链是否配置成功：
 
@@ -157,6 +157,8 @@ source envsetup_cmodel.sh
   # /data/release/toolchains/gcc/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin//aarch64-linux-gnu-g++
   ```
 
-如果终端输出了aarch64编译的路径，则说明交叉编译工具链正确，开发环境是可以正常使用的。
+如果终端输出了aarch64编译的路径，则说明交叉编译工具链正确，通常开发环境是可以正常使用的。
 
-若您需要使用SAIL模块，在非SoC平台下，您需要根据使用的python版本安装相应的pip包，请参考[《SAIL用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)中的安装说明。若您在SoC平台中使用SAIL模块，只需要设置环境变量即可，请参考[#1.5.3.3-yun-hang-huan-jing-pei-zhi](on-soc.md#1.5.3.3-yun-hang-huan-jing-pei-zhi "mention")。
+{% hint style="info" %}
+若您需要使用SAIL模块，在非SoC平台下，您需要根据使用的python版本安装相应的pip包，请参考[《SAIL用户开发手册》](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/sophon-inference/html/index.html)中的安装说明。若您在SoC平台中使用SAIL模块，只需要设置环境变量即可，请参考[#envsetup\_on\_soc](on-soc.md#envsetup\_on\_soc "mention")。
+{% endhint %}

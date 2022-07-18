@@ -38,4 +38,4 @@
 
 目前提供了C/C++/Python三种编程接口的支持：BMRuntime、 BMCV、 BMLib三个模块提供给了C接口编程；Python/C++接口是基于SAIL库实现的。
 
-SAIL（Sophon Artificial Intelligent Library），是对 SophonSDK中的 BMRuntime、 BMCV、 BMLib等底层库的高级封装，将 SDK中原有的“加载 BModel 并驱动 TPU 推理”、“驱动 TPU 做图像处理”、“驱动 VPU 做图像和视频解码”等功能抽象成更为简单的 C++ 接口对外提供；并且使用 pybind11 再次封装，提供了简洁易用的Python接口。目前， SAIL 模块中所有的类、枚举、函数都在“sail”名字空间下， 关于SAILC++/Python 接口详细内容请阅读 [《SAIL用户开发手册》](https://doc.sophgo.com/docs/docs\_latest\_release/sophon-inference/html/index.html)。
+SAIL（Sophon Artificial Intelligent Library），是对 SophonSDK中的 BMRuntime、 BMCV、 BMLib等底层库的高级封装，将 SDK中原有的“加载 BModel 并驱动 TPU 推理”、“驱动 TPU 做图像处理”、“驱动 VPU 做图像和视频解码”等功能抽象成更为简单的 C++ 接口对外提供；并且使用 pybind11 再次封装，提供了简洁易用的Python接口。目前， SAIL 模块中所有的类、枚举、函数都在“sail”名字空间下， 关于SAILC++/Python 接口详细内容请阅读 [《SAIL用户开发手册》](https://doc.sophgo.com/docs/3.0.0/docs\_latest\_release/sophon-inference/html/index.html)。

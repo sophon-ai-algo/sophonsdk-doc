@@ -8,31 +8,97 @@ description: Sophon
 
 > SDK
 >
-> * 移除了examples目录，相关例程统一放在github开源：[https://github.com/sophon-ai-algo/examples/](https://github.com/sophon-ai-algo/examples/)
+> 1. 增加部分对bm1684x芯片的支持
+> 2. SDK发行包名称修改，开发docker名称优化
+> 3. 更新docker启动脚本为docker\_run\_sophonsdk.sh，默认在后台创建docker容器，并自动进入docker容器
+> 4. SDK中移除了examples目录，相关例程统一放在github开源：[https://github.com/sophon-ai-algo/examples/](https://github.com/sophon-ai-algo/examples/)
+> 5.  <mark style="color:red;">**SDK中以下lib库的路径进行了修改，请特别注意：**</mark>
+>
+>     lib/opencv/x86 修改为 lib/opencv/<mark style="color:green;">**pcie**</mark>\
+>     lib/ffmpeg/x86 修改为 lib/ffmpeg/<mark style="color:green;">**pcie**</mark>\
+>     lib/decode/x86 修改为 lib/decode/<mark style="color:green;">**pcie**</mark>
 >
 >
 >
-> middleware
+> bmlib & driver
 >
-> *
->
->
->
-> bm168x
->
-> *
+> 1. 增加了对bm1684x 芯片的支持
+> 2. 修复了若干bug，列出主要：修复了bm-smi 版本号显示的问题、修复了RedHat 8.2下的驱动编译问题
 >
 >
 >
-> bmcompiler与bmruntime
+> bmcv
 >
-> * 增加BM1684X的支持
+> 1. bmcv中api 添加1684x的底层支持，目前还没有全加完， 1684x的vpp新增了cmodel模式，新增了些色彩格式和数据类型格式。新增某些1684x的test case，还在完善。
+> 2. 添加bmcv\_api\_yuv\_resize.cpp，bmcv\_api\_bitwise.cpp， bmcv\_api\_matmul.cpp。
+> 3. 添加缩放选项 BMCV\_INTER\_BICUBIC的代码支持，底层用1684 vpp实现的api接口都支持了。
+> 4. 部分代码添加了错误退出时释放设备内存，减少内存泄露风险。
+> 5. test\_cv\_lkpyramid.cpp 中的结果对比精度，从0.5改为了20. 认为精度存在误差。
+> 6. pcie\_arm64对于opencv3.4.1的动态库链接改为静态库。
+> 7. bmcv中增加对bicubic缩放算法的支持。
+>
+>
+>
+> bmvid/middleware
+>
+> 1. ffmpeg/opencv编解码部分添加bm1684x支持，其他待扩展
+> 2. 增强gb28181的稳定性
+> 3. opencv writer接口中增加录制mp4中extradata的功能
+> 4. 增加cvtColor中对yuvMat的支持
+> 5. ko中对于空url进行特殊保护处理
+> 6. 增加对extra\_frame\_num大小的检查
+> 7. 解决gop\_Preset不当引入的avc格式的编码马赛克
+> 8. bug修正：bmcpu\_opencv接口完善，加强bmcv\_jpeg\_decode对输出内存的检查，修正hwdownload在soc模式下的处理等
+>
+>
+>
+> nntc
+>
+> 1. 增加了对1684x芯片的支持，包括前端接口、fp16/bfp16等类型支持、后端常用算子等
+>    * 支持mlperf相关网络的静态编译
+>    * 完成动态编译框架，目前支持resnet50
+>    * bmtflite支持原生量化的resnet50
+>    * 后端算子与bm1684对齐
+>    * TPU1686的TPUKernel库编程支持
+> 2. 编译器重构，完全移除了对bmlib的依赖。用TPU1684工程取代bm168x工程，多种类型设备支持更加灵活统一
+> 3. 完善了bmlang的c++和python接口，提升了易用性，并针对bm1684x增加了新的接口及算子；
+>    * bmnetu利用bmlang重构，大部分量化算子用bmlang重写
+> 4. 前端增加了新的算子支持（部分以补丁形式进入2.7.0了）
+>    * bmpaddle: swish, layer\_norm, assign,  temporal\_shift、flip、stack、tile、meshgrid、sqrt
+>    * bmneto：conv3d、deconv3d
+>    * bmnetp：min/max支持同时输出值和索引、group\_norm、full，
+>    * bmnetc：合并upsampe和upsampecopy，解决yolov3的Upsample问题、增加elu支持
+>    * bmnetm：l2norm的instance mode
+>    * bmnett: 增加pool和conv的padding='SAME'标记，以支持动态运行
+> 5. bmcompiler若干优化（这里列出主要的）：
+>    * 增加detect\_out相关结构的合并，对paddle的yolo，以及onnx的maskrcnn的后处理转换
+>    * 增加了dump local layer data功能
+>    * 支持外部强制设定tensor的shape和data功能
+>    * 优化reduce\_full实现
+>    * active接口支持coeff参数
+> 6. 若干bug修复（这里列出主要的）
+>    * 修复TPU NMS误检框问题
+>    * 修复了bmneto输入个数大于10出错问题
+>    * 修复了各个layer的shape\_infer
 >
 >
 >
 > Quantization量化工具
 >
-> *
+> 1. 新增对1684x芯片量化支持，1684x量化方法支持per-channel量化。
+> 2. 可视化工具升级。
+> 3. auto-cali用户命令接口优化，完善多输入网络支持，完善paddle等框架支持。
+> 4. 增加auto-cali增加敏感层搜索等调优方法。
+> 5. bug-fix
+>
+>
+>
+> ufw
+>
+> 1. 支持1684x芯片推理和量化。
+> 2. python接口重构，去除boost依赖。
+> 3. 去除对opencv依赖。
+> 4. bug-fix。
 >
 >
 >
@@ -51,14 +117,84 @@ description: Sophon
 > 11. Engine添加 create\_output\_tensors\_map接口（python/c++）,根据bmodel创建output tensor map
 > 12. Engine对输入数据格式为fortran的numpy进行优化，优化了fortran转换为contiguous的时间，在普通PC机上对于640\*640的彩色图像在普通pc机上时间由40ms，缩短为3.5ms
 > 13. 添加nms接口（python/c++）
+> 14. 添加warp\_perspective接口（python/c++)
 >
 >
 >
-> SoC固件
+> BSP
 >
-> *
+> 1. 针对SE6的大量修正
+> 2. 修正SE5混用宽温版、客户16GB板子支持等问题
+> 3. 1684分bin芯片支持
+> 4. bmcpu bugfix
+> 5. 增加ubuntu lite
+
+### 2.7.0 patched on 20220531
+
+> middleware
+>
+> * 修复bug：url为空可能导致的VPU异常
+> * 修复bug：国标拉流偶尔失败
+> * 修复bug: 国标拉流段错误修复bug：url为空可能导致的VPU异常
 >
 >
+>
+> nntc:
+>
+> 1. bmneto增加logsoftmax、reduce\_l2
+> 2. bmnetp增加sign、relu6、softplus、hardswish、hardsigmoid
+> 3. bmpaddle增加hardswish、hardsigmoid支持
+> 4. 优化depthwise deconv实现
+> 5. bmcompiler增加active层扩展功能
+> 6. 修复问题：
+>    * 修复bmnetp的多维linear fc问题
+>    * 修复pad value用整型溢出问题
+>    * 修复bmneto的clip层问题
+>    * 修复同名constant的问题
+>    * 修复bmnetp的输入为int32格式pow算子bug
+>    * 修复bmruntime example的脚本问题
+>    * 修复bmnetu的prec参数问题
+>    * 修复bmlog引起脚本初始化出错问题
+>    * 后端修复动态fc shape推理
+>    * 后端修复arg的dtype convert参数溢出问题
+>    * 后端修复depthwise conv的local mem切分bug
+>    * 后端修复select层问题
+>    * 后端修复expand层在4N模式下出错问题
+>    * 后端修复动态shape const 层问题
+>
+>
+>
+> calibration
+>
+> 1. auto-cali增加paddle支持
+> 2. auto-cali支持多输入网络
+> 3. ufw/cali SoftPlus，Hswish, Hsigmoid支持
+> 4. 修复PReLU量化问题
+> 5. auto-cali batchsize问题修复
+> 6. ufw修复输入顺序问题
+> 7. ufw/cali大blob支持
+> 8. 量化shape问题修复
+> 9. 量化门限问题修复
+> 10. 文档更新
+>
+>
+>
+> sail
+>
+> 1. 修复bug：使用numpy作为输入时，若sail.Engine初始化时未指定IOMode，后续再设置IOMode可能造成的Tensor内存未分配程序崩溃的问题；
+> 2. 修改sail.Decoder解析rtsp流时默认的extra\_frame\_buffer\_num值，修复当该值过大时解析某些要求缓存帧数较多的码流可能引起的解码错误；
+> 3. 完善接口：sail.Decoder增加release和reconnect接口。
+>
+>
+>
+> BSP
+>
+> 1. pcie 模式修正start a53 打印错误的issue
+> 2. pcie 模式修正mix mode 启动后 I2c 错误问题
+>
+>
+>
+> examples：修复完善examples中的若干问题
 
 ### 2.7.0
 
