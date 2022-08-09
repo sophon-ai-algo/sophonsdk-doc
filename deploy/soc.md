@@ -7,9 +7,7 @@
 
 BM1684/1682 soc runtime docker sophon\_soc\_1.0.1.docker: &#x20;
 
-链接：https://pan.baidu.com/s/10ZsR8YoV-5H48WYhWUpEEA&#x20;
-
-提取码：mquw
+链接：[http://219.142.246.77:65000/sharing/GG22lhdEf](http://219.142.246.77:65000/sharing/GG22lhdEf)
 {% endhint %}
 
 #### 5.2.2 构建自定义镜像
