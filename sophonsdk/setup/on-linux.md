@@ -39,7 +39,7 @@ cd sophonsdk_v<x.y.z>
 * PCIe加速卡在插糟中没有插紧；
 * 检查插卡的槽位是否是标准的X16槽位，X8槽位的功率支持通常最大只有45W，不建议使用；
 * PCIe加速卡从PCIe直接供电，不需要外接电源，若连接了外接电源，可能导致卡不能被正常识别；
-* 三芯片以上PCIe加速卡需要足够的散热条件，若风道和风量不能符合PCIe加速卡的被动散热要求，则需要通过BIOS将风扇转速设置到足够大或者假装额外的风扇进行散热。（[建议的风扇购买链接1](https://item.taobao.com/item.htm?id=36055254962\&ali\_refid=a3\_420434\_1006:1107611642:N:4VSdCmF2B094pPkh1WoYZQ%3D%3D:caf6d7709e50567abd191d8082c8d1f8\&ali\_trackid=1\_caf6d7709e50567abd191d8082c8d1f8\&spm=a230r.1.1957635.19) [建议的风扇购买链接2](https://item.taobao.com/item.htm?spm=a230r.1.14.1.663957b2uB9IkW\&id=561295966005\&ns=1\&abbucket=8#detail) [建议的风扇购买链接3](https://item.taobao.com/item.htm?spm=a230r.1.14.1.7e8c597eIKLjz8\&id=555295405824\&ns=1\&abbucket=8#detail)）
+* 三芯片以上PCIe加速卡需要足够的散热条件，若风道和风量不能符合PCIe加速卡的被动散热要求，则需要通过BIOS将风扇转速设置到足够大或者加装额外的风扇进行散热。（[建议的风扇购买链接1](https://item.taobao.com/item.htm?id=36055254962\&ali\_refid=a3\_420434\_1006:1107611642:N:4VSdCmF2B094pPkh1WoYZQ%3D%3D:caf6d7709e50567abd191d8082c8d1f8\&ali\_trackid=1\_caf6d7709e50567abd191d8082c8d1f8\&spm=a230r.1.1957635.19) [建议的风扇购买链接2](https://item.taobao.com/item.htm?spm=a230r.1.14.1.663957b2uB9IkW\&id=561295966005\&ns=1\&abbucket=8#detail) [建议的风扇购买链接3](https://item.taobao.com/item.htm?spm=a230r.1.14.1.7e8c597eIKLjz8\&id=555295405824\&ns=1\&abbucket=8#detail)）
 {% endhint %}
 
 #### **2. PCIe环境驱动安装：**
