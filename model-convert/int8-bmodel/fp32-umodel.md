@@ -7,7 +7,7 @@
 
 _prototxt_文件的文件名一般是_net\_name\_bmnetX\_test\_fp32.prototxt_，其中_X_代表原始框架名的首字母，比如_TensorFlow_的网络转为U_model_后_prototxt_文件名会是_net\_name\_bmnett\_test\_fp32.prototxt_，_PyTorch_转换的网络会是_net\_name\_bmnetp\_test\_fp32.prototxt_等。
 
-此阶段生成的 fp32umodel 文件是量化的输入，using-lmdb 中修改预处理就是针对此阶段生成的 prototxt 文件的修改。
+此阶段生成的 fp32umodel 文件是量化的输入，[using-lmdb ](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/module/chapter4.html#using-lmdb)中修改预处理就是针对此阶段生成的 prototxt 文件的修改。
 {% endhint %}
 
 {% hint style="warning" %}
@@ -19,7 +19,7 @@ _prototxt_文件的文件名一般是_net\_name\_bmnetX\_test\_fp32.prototxt_，
 
 *   如果指定了“-D (-dataset )”参数，那么需要保证“-D”参数下的路径正确，同时指定的数据集兼容该网络，否则会有运行错误。
 
-    若指定了“-D”参数，则按照章节 using-lmdb 方法修改 prototxt。&#x20;
+    若指定了“-D”参数，则需要修改 prototxt，请参考量化文档对应[章节](https://doc.sophgo.com/docs/2.7.0/docs\_latest\_release/calibration-tools/html/module/chapter4.html#using-lmdb)：&#x20;
 
     * 使用 data layer 作为输入&#x20;
     * 正确设置数据预处理&#x20;
